@@ -1,0 +1,44 @@
+import java.util.Scanner;
+public class ifreview {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int userNumber;
+		int minValue = 0, maxValue = 0;
+		int rangeOfValues;
+
+		Scanner input = new Scanner(System.in);
+
+		//Read 5 numbers from user
+		for(int count = 1; count <=5; count = count+1)
+		{
+			//prompt the user for a number
+			System.out.print("Enter a number: ");
+			userNumber = input.nextInt();
+
+			//the first number is always smallest and largest
+			if (count ==1)
+			{
+				minValue = userNumber;
+				maxValue = userNumber;
+			}
+			// Remember the value if it's the smallest so far
+			if (userNumber < minValue)
+			{
+				minValue = userNumber;
+			}
+			// Remember the value if it's the smallest so far
+			if (userNumber > maxValue)
+			{
+				maxValue = userNumber;
+			}
+		}
+		//calculate range of numbers
+		rangeOfValues = maxValue - minValue;
+		//Report the range to the user
+		System.out.println("Your smallest number was " + minValue);
+		System.out.println("Your largest number was " + maxValue);
+		System.out.println("Your range of numbers is: " + rangeOfValues);
+	}
+
+}
